@@ -13,16 +13,22 @@ class CandleStickDto:
     close: float = None
     volume: float = None
 
-    def __init__(self, tempdata):
-        self.open_time = datetime.datetime.utcfromtimestamp(tempdata[0] / 1000)
-        self.open = tempdata[1]
-        self.high = tempdata[2]
-        self.low = tempdata[3]
-        self.close = tempdata[4]
-        self.volume = tempdata[5]
+    def __init__(self, temp_data):
+        self.open_time = datetime.datetime.utcfromtimestamp(temp_data[0] / 1000)
+        self.open = temp_data[1]
+        self.high = temp_data[2]
+        self.low = temp_data[3]
+        self.close = temp_data[4]
+        self.volume = temp_data[5]
 
 @dataclass
 class CandleStickGraph:
     candlesticks: Optional[List[CandleStickDto]]
-    # def __init__(self, candlesticks):
-    #     self.candlesticks = candlesticks
+
+    def __init__(self, data):
+        i = 0
+        temp_list = []
+        while i < len(data):
+            temp_list.append(CandleStickDto(data[i]))
+            i = i + 1
+        self.candlesticks = temp_list
