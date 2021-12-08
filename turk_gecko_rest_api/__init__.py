@@ -1,9 +1,9 @@
 from flask import Flask
 from flask_restful import Api
-from turk_gecko_rest_api.resources.index import Index
-from turk_gecko_rest_api.resources.dataref import DataRef
-from turk_gecko_rest_api.resources.dataprocess import DataProcess
-from turk_gecko_rest_api.resources.orderinfo import OrderInfo
+from turk_gecko_rest_api.endpoints.index import Index
+from turk_gecko_rest_api.endpoints.dataref import DataRef
+from turk_gecko_rest_api.endpoints.dataprocess import DataProcess
+from turk_gecko_rest_api.endpoints.orderinfo import OrderInfo
 import datetime
 import os
 from flask import render_template

@@ -127,5 +127,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-aa.py
-functry.py
+config/local.py

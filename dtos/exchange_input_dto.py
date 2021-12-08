@@ -21,6 +21,18 @@ class CandleStickDto:
         self.close = temp_data[4]
         self.volume = temp_data[5]
 
+    def to_dict(self):
+        out_dict = {
+            'Open Time': self.open_time,
+            'Open': self.open,
+            'High': self.high,
+            'Low': self.low,
+            'Close': self.close,
+            'Volume': self.volume
+        }
+        return out_dict
+
+
 @dataclass
 class CandleStickGraph:
     candlesticks: Optional[List[CandleStickDto]]
@@ -32,3 +44,12 @@ class CandleStickGraph:
             temp_list.append(CandleStickDto(data[i]))
             i = i + 1
         self.candlesticks = temp_list
+
+    def to_dict(self):
+        i = 0
+        out_dict = []
+        while i < len(self.candlesticks):
+            temp = CandleStickDto.to_dict(self.candlesticks[i])
+            out_dict.append(temp)
+            i = i + 1
+        return out_dict
