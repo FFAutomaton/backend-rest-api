@@ -9,8 +9,7 @@ import os
 from flask import render_template
 from flask import Flask
 # from turkgeckorestapi.config import init_config
-
-
+from turk_gecko_rest_api.endpoints.telegram import TelegramBot
 app = Flask(__name__)
 # init_config(app)
 api = Api(app)
@@ -20,4 +19,4 @@ api.add_resource(Index, '/')
 api.add_resource(DataRef, '/dataref')
 api.add_resource(DataProcess, '/dataprocess')
 api.add_resource(OrderInfo, '/orderinfo')
-
+api.add_resource(TelegramBot, '/telegram')
