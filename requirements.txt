@@ -15,4 +15,3 @@ six==1.16.0
 typing-extensions==4.0.1
 urllib3==1.26.7
 Werkzeug==2.0.2
-git+git://github.com/turkish-gekko/service-binance-rest@main#egg=turkish_gekko_binance_service@main
